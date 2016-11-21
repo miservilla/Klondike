@@ -4,7 +4,15 @@
  */
 public class Deck {
 
+    private Card[] deck;
+    private int numCards;
+
     public Deck(){
+        int deckSize = 52;
+        deck = new Card[deckSize];
+        numCards = 0;
+
+
 
     }
 
@@ -13,6 +21,8 @@ public class Deck {
      * @param card
      */
     public void add(Card card){
+        this.deck[numCards] = card;
+        numCards++;
 
     }
 
@@ -63,7 +73,7 @@ public class Deck {
      * @return Returns the number of cards in this deck.
      */
     public int size(){
-        return -1;
+        return numCards;
     }
 
     /**
