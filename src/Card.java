@@ -6,7 +6,14 @@ import javax.swing.*;
  */
 public class Card {
 
+    private Rank rank;
+    private Suit suit;
+    private boolean faceUp = true;
+
+
     public Card(Rank rank, Suit suit){
+        this.rank = rank;
+        this.suit = suit;
 
     }
 
@@ -15,7 +22,7 @@ public class Card {
      * @return Returns the rank of this card: one of ACE through KING.
      */
     public Rank getRank(){
-        return null;
+        return this.rank;
     }
 
     /**
@@ -24,7 +31,7 @@ public class Card {
      * or DIAMONDS.
      */
     public Suit getSuit(){
-        return null;
+        return this.suit;
     }
 
     /**
@@ -32,6 +39,9 @@ public class Card {
      * @return Returns true if the card is face-up, false if not.
      */
     public boolean isFaceUp(){
+        if (this.faceUp){
+            return true;
+        }
         return false;
     }
 
@@ -41,6 +51,9 @@ public class Card {
      * Note: clubs and spades are black, hearts and diamonds are red.
      */
     public boolean isBlack(){
+        if (this.suit == Suit.CLUBS || this.suit == Suit.SPADES){
+            return true;
+        }
         return false;
     }
 
@@ -49,6 +62,7 @@ public class Card {
      * @param faceUp
      */
     public void setFaceUp(boolean faceUp){
+        this.faceUp = faceUp;
 
     }
 }
