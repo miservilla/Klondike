@@ -45,7 +45,7 @@ public class Deck {
      * bottom. Assumes the deck is not empty. Does not modify the deck.
      */
     public Card get(int n){
-        return null;
+        return deck[n];
     }
 
     /**
@@ -82,7 +82,9 @@ public class Deck {
      * empty. Does not modify the deck.
      */
     public Card getTop(){
-        return null;
+        if (numCards > 0) {
+            return deck[numCards - 1];
+        } else return deck[numCards];
     }
 
     /**
