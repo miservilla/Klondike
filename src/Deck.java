@@ -34,6 +34,8 @@ public class Deck {
      * You should not explicitly construct and add all 52 possible cards.
      * Use methods provided in the RANK and SUIT enums to examine all the
      * possible combinations.
+     * Reference http://docs.oracle.com/javase/7/docs/technotes/guides/language/
+     * enums.html for use of foreach loop.
      */
     public void fill(){
         int i = 0;
