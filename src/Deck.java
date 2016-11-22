@@ -6,9 +6,10 @@ public class Deck {
 
     private Card[] deck;
     private int numCards;
+    private int deckSize = 52;
+
 
     public Deck(){
-        int deckSize = 52;
         deck = new Card[deckSize];
         numCards = 0;
 
@@ -35,7 +36,14 @@ public class Deck {
      * possible combinations.
      */
     public void fill(){
-
+        int i = 0;
+        for (Suit suit:Suit.values()){
+            for (Rank rank:Rank.values()) {
+                deck[i] = new Card(rank, suit);
+                numCards++;
+                i++;
+            }
+        }
     }
 
     /**
