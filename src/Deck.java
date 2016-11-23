@@ -55,7 +55,7 @@ public class Deck {
      * bottom. Assumes the deck is not empty. Does not modify the deck.
      */
     public Card get(int n){
-        return deck[n];
+        return this.deck[n];
     }
 
     /**
@@ -63,9 +63,13 @@ public class Deck {
      * @param other
      */
     public void move(Deck other){
-        other.add(this.deck[numCards - 1]);
-        this.deck[numCards - 1] = null;
-        numCards--;
+        if (numCards > 0) {
+            other.add(this.deck[numCards - 1]);
+            this.deck[numCards - 1] = null;
+            numCards--;
+        }else {
+            System.out.println("Not enough cards to move!");
+        }
     }
 
     /**
@@ -77,7 +81,17 @@ public class Deck {
      * @param n
      */
     public void move(Deck other, int n){
-
+        if (numCards >= n + 1){
+            int moveN = numCards - n;
+            for (int i = n; i > 0; i--) {
+                other.add(this.deck[moveN]);
+                this.deck[moveN] = null;
+                this.numCards--;
+                moveN++;
+            }
+        } else {
+            System.out.println("Not enough cards to move!");
+        }
     }
 
     /**
