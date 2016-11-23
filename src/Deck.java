@@ -12,9 +12,6 @@ public class Deck {
     public Deck(){
         deck = new Card[deckSize];
         numCards = 0;
-
-
-
     }
 
     /**
@@ -22,9 +19,12 @@ public class Deck {
      * @param card
      */
     public void add(Card card){
-        this.deck[numCards] = card;
-        numCards++;
-
+        if (numCards < deckSize - 1) {
+            this.deck[numCards] = card;
+            numCards++;
+        }else {
+            System.out.println("Deck is full!");
+        }
     }
 
     /**
@@ -63,7 +63,9 @@ public class Deck {
      * @param other
      */
     public void move(Deck other){
-
+        other.add(this.deck[numCards - 1]);
+        this.deck[numCards - 1] = null;
+        numCards--;
     }
 
     /**
@@ -91,7 +93,7 @@ public class Deck {
      * @return Returns the top card on this deck. Returns null if the deck is
      * empty. Does not modify the deck.
      */
-    public Card getTop(){
+    public Card getTop() {
         if (numCards > 0) {
             return deck[numCards - 1];
         } else return deck[numCards];
