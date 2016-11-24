@@ -1,3 +1,8 @@
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Random;
+
 /**
  * @author Michael Servilla
  * @version date 2016-11-20
@@ -118,19 +123,10 @@ public class Deck {
      * will only be called on a full deck of 52 cards if that makes it easier,
      * but ideally you would be able to correctly shuffle any non-empty deck.
      *
-     * You may want to initially create this method with an empty body while you
-     * work on the rest of the program.
-     *
-     * The instructors will not help you on this method. You must research
-     * shuffling on your own. Even if you think you have a good idea how to do
-     * this on your own, I recommend you at least do a quick Google search to
-     * see how other folks have tackled the problem of shuffling an array.
-     *
-     * Mention in a comment in the method what source(s) you used when
-     * researching shuffling algorithms. Include URLs for web pages, title and
-     * author for books, names for people, etc.
+     * Source for shuffle method http://www.vogella.com/tutorials/
+     * JavaAlgorithmsShuffle/article.html
      */
     public void shuffle(){
-
+        Collections.shuffle(Arrays.asList(this.deck));
     }
 }
