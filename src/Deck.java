@@ -129,4 +129,12 @@ public class Deck {
     public void shuffle(){
         Collections.shuffle(Arrays.asList(this.deck));
     }
+
+//    Below is the less elegant form of code for shuffle, but does the same job!
+//        Random rnd = new Random();
+//        for (int i = numCards; i > 1 ; i--) {
+//            int j = rnd.nextInt(i);
+//            Card tmp = this.deck[i-1];
+//            this.deck[i - 1] = this.deck[j];
+//            this.deck[j] = tmp;
 }
