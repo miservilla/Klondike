@@ -68,7 +68,6 @@ public class Deck {
     public void move(Deck other){
         if (numCards > 0) {
             other.add(this.deck[numCards - 1]);
-            this.deck[numCards - 1] = null;
             numCards--;
         }else {
             System.out.println("Not enough cards to move!");
@@ -88,7 +87,6 @@ public class Deck {
             int moveN = numCards - n;
             for (int i = n; i > 0; i--) {
                 other.add(this.deck[moveN]);
-                this.deck[moveN] = null;
                 this.numCards--;
                 moveN++;
             }
